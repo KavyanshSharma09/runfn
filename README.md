@@ -80,6 +80,8 @@ Functions returning `None` can also be checked:
 
 ```bash
 runfn myfile.py log_message "Hello" --expect=None
+# Output:
+# Result: None (function has no return value)
 # PASS
 ```
 
@@ -109,8 +111,10 @@ runfn myfile.py add 2 5 --expect=7 --time_it
 
 ## Limitations & Safety
 
-- Target functions cannot have arguments named `expect` or `time_it`, as these flags are reserved by the runner.
-- Private functions or attributes (names starting with `_`) and non-callable attributes cannot be called.
+- **CLI Flag Collision:** When using the CLI (`runfn ...`), target functions cannot have parameters named `expect` or `time_it` because these are reserved runner flags. *(This restriction does not apply when importing `runfn` as a Python library).*
+- **Private Attribute Protection:** Functions or attributes starting with `_` and non-callable attributes cannot be called.
+- **File Type Validation:** Only valid `.py` files can be executed.
+- **CLI Type Parsing:** The CLI automatically parses numbers, booleans, and collections (via Google Fire). To pass literal strings that look like numbers or booleans, enclose them in nested quotes (e.g. `' "123" '`).
 
 ---
 
