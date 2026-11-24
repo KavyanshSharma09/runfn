@@ -26,5 +26,10 @@ dev = [
     "pytest",
 ]
 
+[project.urls]
+Homepage = "https://github.com/KavyanshSharma09/runfn"
+Repository = "https://github.com/KavyanshSharma09/runfn"
+Issues = "https://github.com/KavyanshSharma09/runfn/issues"
+
 [project.scripts]
 runfn = "runfn.cli:main"

@@ -30,7 +30,21 @@ pip install -e ".[dev]"
 
 ## Usage
 
-### Basic Function Execution
+### As a Python Library
+
+```python
+import runfn
+
+# Call any function dynamically and get its return value
+result = runfn.run("myfile.py", "add", 2, 5)
+print(result)  # 7
+
+# With keyword arguments
+greeting = runfn.run("myfile.py", "greet", name="Sam")
+print(greeting)  # 'Hello Sam'
+```
+
+### From the Command Line (CLI)
 
 ```bash
 runfn myfile.py add 2 5
