@@ -1,0 +1,30 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "runfn"
+version = "0.1.0"
+description = "Run any Python function from the terminal, with expected-output checks and timing"
+readme = "README.md"
+requires-python = ">=3.8"
+license = { file = "LICENSE" }
+authors = [
+    { name = "Kavyansh Sharma", email = "kavyanshsharma2004@gmail.com" }
+]
+dependencies = [
+    "fire",
+]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest",
+]
+
+[project.scripts]
+runfn = "runfn.cli:main"
